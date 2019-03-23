@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CharacterList from './components/CharacterList';
 import './App.css';
 
-class App extends Component {
+class App extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -31,13 +31,17 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state);
+
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
-        <CharacterList />
+        <div className="Container">
+          <CharacterList starwarsChars={this.state.starwarsChars} />
+        </div>
       </div>
     );
-  }
-}
+  };
+};
 
 export default App;

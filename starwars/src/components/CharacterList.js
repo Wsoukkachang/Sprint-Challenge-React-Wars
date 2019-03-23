@@ -1,9 +1,19 @@
 import React from 'react';
 import Character from './Character';
 
-export default function CharacterList(props){
-    
+const CharacterList = props => {
+    // map array
+
     return (
-    <Character />
-    )
-}
+        <div className="character-list"> 
+            {props.starwarsChars.map(character => (
+                <Character 
+                    character={character}
+                    key={character.name}
+                />
+                ))}
+        </div>
+        );
+};
+
+export default CharacterList;
