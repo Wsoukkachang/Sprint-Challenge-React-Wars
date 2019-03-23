@@ -7,3 +7,53 @@
 }
 /* write your parent styles in here for your App.js */
 
+* {
+  box-sizing: border-box;
+}
+
+.Container {
+  margin: 0 auto;
+  max-width: 960px;
+  width: 100%;
+}
+
+h2{
+  font-size: 1.2rem;
+  line-height: 1.2em;
+  color: black;
+}
+
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 auto;
+}
+
+.character-container {
+background-color: orange;
+display: flex;
+width: 300px;
+margin: 10px;
+padding: 10px;
+text-align: left;
+line-height: .75em;
+border-radius: 15px;
+border: 5px outset darkgrey;
+}
+
+.character-img {
+background-image: url("/favicon.ico");
+background-size: cover;
+background-color: rgb(133, 8, 8);
+width: 50px;
+height: 50px;
+margin-top: 60px;
+margin-right: 20px;
+margin-left: 10px;
+}
+
+.character-info {
+  color: grey;
+  width: 200px;
+  }
