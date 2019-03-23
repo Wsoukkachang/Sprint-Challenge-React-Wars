@@ -2,10 +2,12 @@ import React from 'react';
 import "./StarWars.css";
 
 const Character = props => {
-    // 
+     
     return (
     <div className="character-container">
+        
         <div className="character-img"></div>
+
             <div className="character-info">
             
             <h2>{props.character.name}</h2>
