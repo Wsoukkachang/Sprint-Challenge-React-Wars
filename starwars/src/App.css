@@ -21,18 +21,20 @@ h2 {
   font-size: 1.2rem;
   line-height: 1.2em;
   color: black;
+  text-shadow: 2px 2px 5px red;
 }
 
 .character-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   margin: 0 auto;
 }
 
 .character-container {
   background-color: orange;
   display: flex;
+  align-content: center;
   width: 300px;
   margin: 10px;
   padding: 10px;
@@ -42,6 +44,7 @@ h2 {
   border: 5px outset darkgrey;
 }
 
+  /* image */
 .character-img {
   background-image: url("/favicon.ico");
   background-size: cover;
@@ -53,7 +56,41 @@ h2 {
   margin-left: 10px;
 }
 
+.character-container:hover {
+  background-color: orange;
+  text-shadow: 1px 1px 2px black, 0 0 10px white, 0 0 5px grey;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 .character-info {
   color: grey;
   width: 200px;
+}
+
+  /* pagination buttons */
+button {
+  background-color: orange;
+  color: black;
+  padding: 10px 26px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5rem;
+  margin: 15px 10px;
+  border: 5px double grey;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+/* added hover effect */
+button:hover {
+  background-color: orange;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px grey;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+strong {
+color: black;
 }

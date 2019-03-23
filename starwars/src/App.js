@@ -1,5 +1,6 @@
 import React from 'react';
 import CharacterList from './components/CharacterList';
+import Pagination from './components/Pagination';
 import './App.css';
 
 class App extends React.Component {
@@ -9,9 +10,31 @@ class App extends React.Component {
       starwarsChars: []
     };
   }
-
+  
   componentDidMount() {
     this.getCharacters('https://swapi.co/api/people/');
+  }
+
+  // pagination - stretch - previous state 
+  prev = e => {
+    if (this.state.prev === null) {
+      e.preventDefault();
+    }
+
+    else {
+      this.getCharacters(this.state.prev);
+    }
+  }
+
+   // pagination - stretch - next state 
+  next = e => {
+    if (this.state.next === null) {
+      e.preventDefault();
+    }
+    
+    else {
+      this.getCharacters(this.state.next);
+    }
   }
 
   getCharacters = URL => {
@@ -23,7 +46,10 @@ class App extends React.Component {
         return res.json();
       })
       .then(data => {
-        this.setState({ starwarsChars: data.results });
+        this.setState({ 
+          starwarsChars: data.results,
+          next: data.next, // added pagination - stretch
+          prev: data.previous }); // added pagination - stretch
       })
       .catch(err => {
         throw new Error(err);
@@ -37,7 +63,9 @@ class App extends React.Component {
       <div className="App">
         <h1 className="Header">React Wars</h1>
         <div className="Container">
+          <Pagination next={this.next} prev={this.prev}/>
           <CharacterList starwarsChars={this.state.starwarsChars} />
+          <Pagination next={this.next} prev={this.prev}/>
         </div>
       </div>
     );
